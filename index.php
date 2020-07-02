@@ -106,7 +106,7 @@ else {
                             <td>
                                 <div class="rrb">
                                     <p>Please Review Our Product!</p>
-                                    <button class="rbtn opmd">Add Review</button>
+                                    <button class="rbtn opmd">Review</button>
                                 </div>
                             </td>
                         </tr>
@@ -141,7 +141,7 @@ else {
                         </div>
                         <div class="rate-error" align="center"></div>
                         <div class="rpsb" align="center">
-                            <button class="rpbtn">Post Review</button>
+                            <button class="rpbtn">Add Review</button>
                         </div>
 
                     </div>
