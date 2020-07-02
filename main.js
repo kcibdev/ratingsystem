@@ -1,8 +1,5 @@
 var ratedIndex = -1;
 
-
-
-
 function resetColors() {
     $(".rps  i").css("color", "#e2e2e2");
 }
@@ -17,30 +14,29 @@ $(document).ready(function () {
 
     resetColors();
 
-    if (localStorage.getItem("rating") != null) {
-        setStars(parseInt(localStorage.getItem("rating")));
-        $(".starRateV").val(parseInt(localStorage.getItem("rating")));
-    }
+    $(".rps  i").mouseover(function () {
+        resetColors();
+        var currentIndex = parseInt($(this).data("index"));
+        setStars(currentIndex);
+    })
 
     $(".rps  i").on("click", function () {
         ratedIndex = parseInt($(this).data("index"));
         localStorage.setItem("rating", ratedIndex);
         $(".starRateV").val(parseInt(localStorage.getItem("rating")));
     })
-
-    $(".rps  i").mouseover(function () {
-        resetColors();
-
-        var currentIndex = parseInt($(this).data("index"));
-        setStars(currentIndex);
-    })
-
+    // if a person does not click on the star then go back
     $(".rps  i").mouseleave(function () {
         resetColors();
         if (ratedIndex != -1) {
             setStars(ratedIndex);
         }
     })
+    // if a person leaves the page and still comes back
+    if (localStorage.getItem("rating") != null) {
+        setStars(parseInt(localStorage.getItem("rating")));
+        $(".starRateV").val(parseInt(localStorage.getItem("rating")));
+    }
 
     $(".rpc i, .review-bg").click(function () {
         $(".review-modal").fadeOut();
