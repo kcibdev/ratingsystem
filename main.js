@@ -1,17 +1,17 @@
 var ratedIndex = -1;
 
 
-function setStars(max) {
-    for (var i = 0; i <= max; i++) {
-        $(".rps  i:eq(" + i + ")").css("color", "#f7bf17");
-    }
-}
+
 
 function resetColors() {
     $(".rps  i").css("color", "#e2e2e2");
 }
 
-
+function setStars(max) {
+    for (var i = 0; i <= max; i++) {
+        $(".rps  i:eq(" + i + ")").css("color", "#f7bf17");
+    }
+}
 $(document).ready(function () {
 
 
